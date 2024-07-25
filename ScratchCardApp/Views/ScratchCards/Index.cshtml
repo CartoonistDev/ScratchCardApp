@@ -1,0 +1,42 @@
+﻿@model IEnumerable<Models.ScratchCards>
+
+<h1>WAEC Scratch Cards</h1>
+
+<table class="table">
+    <thead>
+        <tr>
+            <th>Id</th>
+            <th>Code</th>
+            <th>IsPurchased</th>
+            <th>IsUsed</th>
+            <th>PurchaseDate</th>
+            <th>UsageDate</th>
+            <th>Actions</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var card in Model)
+        {
+            <tr>
+                <td>@card.Id</td>
+                <td>@card.Code</td>
+                <td>@card.IsPurchased</td>
+                <td>@card.IsUsed</td>
+                <td>@card.PurchaseDate</td>
+                <td>@card.UsageDate</td>
+                <td>
+                    @if (!card.IsPurchased)
+                    {
+                        <a asp-action="Purchase" asp-route-id="@card.Id" class="btn btn-primary">Purchase</a>
+                    }
+                    else if (!card.IsUsed)
+                    {
+                        <a asp-action="Use" asp-route-id="@card.Id" class="btn btn-success">Use</a>
+                    }
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>
+
+<a asp-action="Generate" class="btn btn-secondary">Generate Cards</a>

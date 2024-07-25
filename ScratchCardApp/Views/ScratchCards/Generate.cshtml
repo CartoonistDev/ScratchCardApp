@@ -1,0 +1,13 @@
+﻿@{
+    ViewData["Title"] = "Generate WAEC Scratch Cards";
+}
+
+<h1>Generate Scratch Cards</h1>
+
+<form asp-action="Generate" method="post">
+    <div class="form-group">
+        <label for="count">Number of Cards</label>
+        <input type="number" class="form-control" id="count" name="count" />
+    </div>
+    <button type="submit" class="btn btn-primary">Generate</button>
+</form>
