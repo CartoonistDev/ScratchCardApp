@@ -53,32 +53,33 @@ ScratchCardApp is an ASP.NET Core application that provides a RESTful API and an
 
 1. **Clone the repository**
 
-   ``bash
+   ```bash
    git clone https://github.com/yourusername/ScratchCardApp.git
    cd ScratchCardApp
 
 ### Set up the database connection
 
-Update the connection string in `appsettings.json`:
+- Update the connection string in `appsettings.json`:
 
-	``json
+  ```json
 	{
 	  "ConnectionStrings": {
-		"DefaultConnection": "Data Source=waecards.db"
+		"DefaultConnection": "Data Source=app.db"
 	  }
 	}
 
 ### Apply database migrations
 
-	``bash
-	dotnet ef migrations add InitialCreate
-	dotnet ef database update
+- 
+   ```bash
+    dotnet ef migrations add InitialCreate
+    dotnet ef database update
 		
 
 ### Run the application
-
-	``bash
-	dotnet run
+- 
+    ```bash
+     dotnet run
 
 # Navigate to the application
 
@@ -88,19 +89,19 @@ Open your browser and go to https://localhost:port to interact with the MVC appl
 
 ### API Endpoints
 - **Generate Scratch Cards**
-  ``http
+  ```http
   POST /api/scratchcards/generate?count={count}
 
 - **List Scratch Cards**
- ``http
- GET /api/scratchcards
+     ```http
+  GET /api/scratchcards
  
 - **Purchase a Scratch Card**
-  ``http
+  ```http
   POST /api/scratchcards/purchase/{id}
 
 - **Use a Scratch Card**
-  ``http
+  ```http
   POST /api/scratchcards/use/{id}
 
 
@@ -111,10 +112,10 @@ Open your browser and go to https://localhost:port to interact with the MVC appl
 
 ## Running Unit Tests
 
-The project includes unit tests for the `ScratchCardService`. To run the tests, use the following command:
-
-	``bash
-	dotnet test
+- The project includes unit tests for the `ScratchCardService`. To run the tests, use the following command:
+    ```bash
+       
+       dotnet test
 
 ## Contributing
 
